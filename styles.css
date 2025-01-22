@@ -40,8 +40,6 @@ html {
   max-width: 525px;
 }
 
-
-
 .intro-text {
   font-size: 1.25rem;
   line-height: 169.3%;
@@ -92,7 +90,6 @@ html {
   display: grid;
   column-gap: 16px;
   row-gap: 16px;
-
 }
 
 .intro-feature {
@@ -135,7 +132,6 @@ html {
   border-radius: 50%;
   filter: blur(150px);
 }
-
 
 /* Pet area */
 
