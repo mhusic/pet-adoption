@@ -10,9 +10,12 @@ async function weather() {
 weather();
 
 async function petsArea() {
-  const petsAreaPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json")
-  const petsData = await petsAreaPromise.json()
-  console.log(petsData)
+  const petsAreaPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json");
+  const petsData = await petsAreaPromise.json();
+
+  petsData.forEach(pet => {
+    console.log(pet.name, pet.species)
+  })
 }
 
 petsArea();
