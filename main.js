@@ -1,3 +1,6 @@
+const template = document.querySelector("#pet-card-template");
+const wrapper = document.createDocumentFragment();
+
 async function weather() {
   const weatherPromise = await fetch("https://api.weather.gov/gridpoints/MFL/110,50/forecast")
   const weatherData = await weatherPromise.json()
@@ -14,8 +17,16 @@ async function petsArea() {
   const petsData = await petsAreaPromise.json();
 
   petsData.forEach(pet => {
-    console.log(pet.name, pet.species)
+    const clone = template.content.cloneNode(true);
+
+    clone.querySelector("h3").textContent = pet.name;
+    clone.querySelector(".pet-description").textContent = pet.description;
+    clone.querySelector("img").src = pet.photo;
+
+    wrapper.appendChild(clone)
   })
+  const listOfPets = document.querySelector(".list-of-pets");
+  listOfPets.appendChild(wrapper);
 }
 
 petsArea();
