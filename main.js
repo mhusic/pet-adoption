@@ -13,7 +13,7 @@ async function weather() {
 weather();
 
 async function petsArea() {
-  const petsAreaPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json");
+  const petsAreaPromise = await fetch("https://superlative-squirrel-3c0cb1.netlify.app/.netlify/functions/pets");
   const petsData = await petsAreaPromise.json();
 
   petsData.forEach(pet => {
